@@ -4,22 +4,22 @@ function Contact() {
   const contactInfo = [
     {
       label: 'Email',
-      value: 'sanujbhagat@example.com',
-      href: 'mailto:sanujbhagat@example.com',
+      value: 'sanuj12201@gmail.com',
+      href: 'mailto: sanuj12201@gmail.com',
       icon: '📧',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
       label: 'LinkedIn',
-      value: 'linkedin.com/in/sanujbhagat',
-      href: 'https://linkedin.com/in/sanujbhagat',
+      value: 'https://www.linkedin.com/in/sanuj-bhagat-57bb24256/',
+      href: 'https://www.linkedin.com/in/sanuj-bhagat-57bb24256/',
       icon: '💼',
       gradient: 'from-blue-600 to-blue-800'
     },
     {
       label: 'GitHub',
-      value: 'github.com/sanujbhagat',
-      href: 'https://github.com/sanujbhagat',
+      value: 'https://github.com/sanuj344',
+      href: 'https://github.com/sanuj344',
       icon: '💻',
       gradient: 'from-gray-700 to-gray-900'
     }
