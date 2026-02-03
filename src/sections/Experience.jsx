@@ -30,21 +30,22 @@ function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-gradient-to-b from-black to-slate-900">
+    <section id="experience" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Experience & Achievements</h2>
-          <p className="text-xl text-gray-300">My professional journey and accomplishments</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Experience & Achievements</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600">My professional journey and accomplishments</p>
         </motion.div>
 
-        <div className="mb-20">
-          <h3 className="text-4xl font-bold text-white mb-12 text-center">Experience</h3>
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center">Experience</h3>
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
@@ -53,20 +54,20 @@ function Experience() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`bg-gradient-to-r ${exp.gradient} p-8 rounded-2xl shadow-xl`}
+                className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-orange-200 transition-all duration-500 shadow-lg hover:shadow-2xl"
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                  <h4 className="text-2xl font-bold text-white">{exp.title}</h4>
-                  <span className="text-white/80 font-medium text-lg">{exp.company} • {exp.period}</span>
+                  <h4 className="text-2xl font-bold text-gray-900">{exp.title}</h4>
+                  <span className="text-orange-600 font-semibold text-lg">{exp.company} • {exp.period}</span>
                 </div>
-                <p className="text-white/90 leading-relaxed text-lg">{exp.description}</p>
+                <p className="text-gray-600 leading-relaxed text-lg">{exp.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
         <div>
-          <h3 className="text-4xl font-bold text-white mb-12 text-center">Achievements</h3>
+          <h3 className="text-3xl font-bold text-gray-900 mb-10 text-center">Achievements</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {achievements.map((achievement, index) => (
               <motion.div
@@ -76,11 +77,11 @@ function Experience() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className={`bg-gradient-to-br ${achievement.gradient} p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500`}
+                className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-orange-200 transition-all duration-500 shadow-lg hover:shadow-2xl"
               >
                 <div className="text-6xl mb-6">{achievement.icon}</div>
-                <h4 className="text-2xl font-bold text-white mb-4">{achievement.title}</h4>
-                <p className="text-white/90 leading-relaxed">{achievement.description}</p>
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">{achievement.title}</h4>
+                <p className="text-gray-600 leading-relaxed">{achievement.description}</p>
               </motion.div>
             ))}
           </div>

@@ -1,11 +1,39 @@
 import { motion } from 'framer-motion';
 
 function Hero() {
+  const socialLinks = [
+    { icon: 'linkedin', href: 'https://www.linkedin.com/in/sanuj-bhagat-57bb24256/', color: 'hover:bg-blue-600' },
+    { icon: 'github', href: 'https://github.com/sanuj344', color: 'hover:bg-gray-800' },
+    { icon: 'twitter', href: '#', color: 'hover:bg-blue-400' },
+    { icon: 'telegram', href: '#', color: 'hover:bg-blue-500' },
+    { icon: 'instagram', href: '#', color: 'hover:bg-pink-600' },
+    { icon: 'medium', href: '#', color: 'hover:bg-gray-700' },
+  ];
+
   return (
-    <section id="hero" className="min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-16 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-pink-900/20"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="hero" className="min-h-screen flex items-center bg-gray-50 pt-16 relative overflow-hidden">
+      {/* Network Pattern Background */}
+      <div className="absolute inset-0 bg-network-pattern opacity-30"></div>
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-20 left-10 w-2 h-2 bg-gray-400 rounded-full"></div>
+      <div className="absolute top-40 left-1/4 w-2 h-2 bg-gray-400 rounded-full"></div>
+      <div className="absolute top-60 right-1/4 w-2 h-2 bg-gray-400 rounded-full"></div>
+      <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-gray-400 rounded-full"></div>
+      
+      <svg className="absolute top-20 left-20 w-64 h-64 opacity-10" viewBox="0 0 200 200">
+        <line x1="10" y1="10" x2="50" y2="50" stroke="#9CA3AF" strokeWidth="1" />
+        <line x1="50" y1="50" x2="100" y2="30" stroke="#9CA3AF" strokeWidth="1" />
+        <line x1="100" y1="30" x2="150" y2="80" stroke="#9CA3AF" strokeWidth="1" />
+        <circle cx="10" cy="10" r="3" fill="#9CA3AF" />
+        <circle cx="50" cy="50" r="3" fill="#9CA3AF" />
+        <circle cx="100" cy="30" r="3" fill="#9CA3AF" />
+        <circle cx="150" cy="80" r="3" fill="#9CA3AF" />
+      </svg>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -16,41 +44,65 @@ function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold text-white leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
             >
-              Hi, I'm Sanuj Bhagat
+              Hi There,
+              <br />
+              I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Sanuj Bhagat</span>
             </motion.h1>
+            
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-3xl text-purple-200 font-light"
+              className="text-xl md:text-2xl text-gray-700 font-medium"
             >
-              Full Stack Developer (MERN + PostgreSQL)
+              I Am Into <span className="text-red-600">Web Development</span>
             </motion.p>
-            <motion.p
+
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-gray-300 max-w-2xl leading-relaxed"
+              className="pt-4"
             >
-              Passionate about creating innovative web solutions with modern technologies, clean code, and exceptional user experiences.
-            </motion.p>
+              <a
+                href="#about"
+                className="inline-flex items-center bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                About Me
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </motion.div>
+
+            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-6 pt-4"
+              className="flex gap-4 pt-4"
             >
-              <a href="#projects" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center">
-                View My Work
-              </a>
-              <button className="border-2 border-purple-400 text-purple-300 hover:bg-purple-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                Download Resume
-              </button>
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.icon}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className={`w-12 h-12 bg-gray-900 ${social.color} rounded-full flex items-center justify-center text-white transition-all duration-300 shadow-md hover:shadow-lg`}
+                >
+                  <SocialIcon type={social.icon} />
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
 
+          {/* Right Content - Avatar */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -58,18 +110,67 @@ function Hero() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-8xl font-bold shadow-2xl border-8 border-white/20">
-                SB
+              {/* Yellow Circle Background */}
+              <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-2xl">
+                {/* Avatar Illustration Placeholder */}
+                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center text-blue-900 text-8xl font-bold border-8 border-white shadow-xl">
+                  👨‍💻
+                </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🚀</span>
-              </div>
+              
+              {/* Floating Badge */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+                className="absolute bottom-8 -left-4 w-16 h-16 bg-red-500 rounded-full flex items-center justify-center shadow-lg border-4 border-white"
+              >
+                <span className="text-white font-bold text-xs">NEW</span>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
+}
+
+// Social Icon Component
+function SocialIcon({ type }) {
+  const icons = {
+    linkedin: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    ),
+    github: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+    ),
+    twitter: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+      </svg>
+    ),
+    telegram: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+    ),
+    instagram: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    ),
+    medium: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+      </svg>
+    ),
+  };
+  
+  return icons[type] || null;
 }
 
 export default Hero;
