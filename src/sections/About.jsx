@@ -3,23 +3,23 @@ import { motion } from "framer-motion";
 function About() {
   const features = [
     {
-      title: "Full Stack Development",
+      title: "Full Stack Engineering",
       description:
-        "Experienced in building end-to-end web applications using React, Node.js, Express.js, and modern frontend tools, with a strong focus on performance and scalability.",
+        "Experienced in building scalable web applications using React.js, Node.js, and Express.js. Developed real-world platforms including tutor marketplaces and AI-based systems with a strong focus on performance and clean architecture.",
       icon: "⚛️",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
-      title: "Databases & Backend Systems",
+      title: "Backend & Database Optimization",
       description:
-        "Hands-on experience with PostgreSQL, MongoDB, and Prisma ORM for designing efficient schemas, optimizing queries, and building reliable backend systems.",
+        "Worked extensively with PostgreSQL, MongoDB, and Prisma ORM. Improved database performance by 30% through indexing and query optimization while building secure REST APIs with JWT authentication.",
       icon: "🗄️",
       gradient: "from-green-500 to-teal-500",
     },
     {
-      title: "Problem Solving & Engineering",
+      title: "Problem Solving & System Design",
       description:
-        "Strong foundation in data structures, algorithms, and system design, with a passion for solving real-world problems through clean and maintainable code.",
+        "Solved 300+ DSA problems on LeetCode and built systems handling real-world constraints like concurrency, scalability, and API efficiency, including platforms processing 100+ daily operations.",
       icon: "🧠",
       gradient: "from-purple-500 to-pink-500",
     },
@@ -41,19 +41,50 @@ function About() {
           <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto mb-6"></div>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I’m a <span className="font-semibold text-gray-800">Full Stack Developer</span>{" "}
+            I’m a{" "}
+            <span className="font-semibold text-gray-800">
+              Full Stack Developer
+            </span>{" "}
             and Electronics & Communication Engineering undergraduate from{" "}
             <span className="font-semibold text-gray-800">
               IIIT Una
-            </span>. I enjoy building scalable, real-world web applications and
-            transforming ideas into reliable products.
+            </span>. I specialize in building scalable, production-ready web
+            applications with a strong focus on performance, clean code, and user experience.
             <br />
             <br />
-            Currently, I’m working as a <span className="font-semibold text-gray-800">
-              Web Developer Intern (Founding Engineer)
-            </span>, where I’m developing an AI-powered document processing platform
-            similar to iLovePDF. My work spans backend API development, frontend
-            experiences, database optimization, and secure authentication systems.
+            Currently, I’m working as a{" "}
+            <span className="font-semibold text-gray-800">
+              Full Stack Developer Intern at SmartSkale
+            </span>{" "}
+            and{" "}
+            <span className="font-semibold text-gray-800">
+              Software Engineer Intern at Celeris Ventures
+            </span>, where I develop real-world features like dynamic routing,
+            reusable UI systems, and location-based services using the Geolocation API.
+            <br />
+            <br />
+            Previously, I built{" "}
+            <span className="font-semibold text-gray-800">
+              AIFileFlow
+            </span>, a scalable document-processing platform handling 100+ daily
+            operations, and developed secure APIs that reduced manual effort by
+            40%.
+            <br />
+            <br />
+            I have also optimized database performance by{" "}
+            <span className="font-semibold text-gray-800">
+              30%
+            </span>{" "}
+            and built secure systems using JWT authentication. Additionally, I’m
+            a{" "}
+            <span className="font-semibold text-gray-800">
+              National Semi-finalist in Tata Imagination Challenge (Top 2%)
+            </span>{" "}
+            and have solved{" "}
+            <span className="font-semibold text-gray-800">
+              300+ DSA problems
+            </span>{" "}
+            on LeetCode.
           </p>
         </motion.div>
 

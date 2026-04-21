@@ -3,9 +3,42 @@ import { motion } from "framer-motion";
 function Projects() {
   const projects = [
     {
+      title: "AIOFileFlow – Document Processing Platform",
+      description:
+        "Built a scalable document-processing platform handling 100+ daily file operations. Developed 10+ RESTful APIs for PDF tasks like compression, merging, splitting, and conversion, reducing manual work by 40%. Designed modular backend architecture supporting concurrent processing and built a responsive React frontend.",
+      techStack: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "PDF Processing",
+        "TailwindCSS",
+      ],
+      liveDemo: "https://aiofileflow.com/",
+      code: "#",
+      gradient: "from-indigo-500 to-blue-500",
+      icon: "📄",
+    },
+    {
+      title: "Weavy AI Clone",
+      description:
+        "Developed an AI-powered SaaS application inspired by Weavy, featuring chat-based interactions and AI workflows. Implemented prompt handling, API integrations, and a clean modular frontend. Focused on building a scalable and extensible architecture for AI-based applications.",
+      techStack: [
+        "React",
+        "Node.js",
+        "AI APIs",
+        "TailwindCSS",
+        "Framer Motion",
+      ],
+      liveDemo: "https://galaxy-ai-assignment-omega.vercel.app/",
+      code: "https://github.com/sanuj344/galaxy.ai_assignment",
+      gradient: "from-green-500 to-emerald-500",
+      icon: "🤖",
+    },
+    {
       title: "Imagify – AI Image Generator",
       description:
-        "A full-stack SaaS platform that generates AI-powered images from text prompts. Implemented secure JWT authentication, a credit-based usage system, and integrated Razorpay for payments. Built a responsive and animated UI using TailwindCSS and Framer Motion for a smooth user experience.",
+        "A full-stack SaaS platform that generates AI-powered images from text prompts. Implemented secure JWT authentication, a credit-based system, and integrated Razorpay for payments. Built a responsive UI using TailwindCSS and Framer Motion.",
       techStack: [
         "React",
         "Node.js",
@@ -14,7 +47,6 @@ function Projects() {
         "JWT",
         "Razorpay",
         "TailwindCSS",
-        "Framer Motion",
       ],
       liveDemo: "https://imagify-red-nine.vercel.app",
       code: "https://github.com/sanuj344/Imagify",
@@ -24,7 +56,7 @@ function Projects() {
     {
       title: "Smart Interview Platform",
       description:
-        "A full-stack interview scheduling platform with role-based workflows for Candidates, Interviewers, and Admins. Supports real-time slot booking with conflict prevention, interviewer dashboards for availability and feedback, and an admin analytics dashboard to track interview metrics and performance scores.",
+        "A full-stack interview scheduling platform with role-based workflows. Implemented conflict-free slot booking logic, interviewer dashboards, and admin analytics. Designed normalized PostgreSQL schemas using Prisma and prevented race conditions in scheduling.",
       techStack: [
         "React",
         "Node.js",

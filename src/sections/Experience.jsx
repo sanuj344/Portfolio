@@ -1,35 +1,50 @@
+
 import { motion } from "framer-motion";
 
 function Experience() {
   const experiences = [
     {
-      title: "Web Developer Intern (Founding Engineer)",
-      company: "Rawyal, Jaipur",
-      period: "Jan 2026 – Present",
+      title: "Full Stack Developer Intern",
+      company: "SmartSkale (Remote)",
+      period: "Apr 2026 – Present",
       description:
-        "Developing AIFileFlow, a full-stack document processing platform similar to iLovePDF with enhanced features. Building scalable RESTful APIs using Node.js and Express.js for PDF operations such as compress, merge, split, rotate, extract pages, and file conversion. Creating responsive and user-friendly interfaces with React.js and collaborating closely with founders to define MVP scope and prioritize features.",
+        "Built learner-side features for a tutor marketplace using React.js, including profile management, tutor search, filtering, and reusable UI components. Implemented location-based tutor discovery using Geolocation API and Haversine formula, while optimizing performance with modular architecture and React hooks.",
     },
     {
       title: "Software Engineer Intern",
-      company: "Legabyte Innovations",
+      company: "Celeris Ventures (Remote)",
+      period: "Apr 2026 – Present",
+      description:
+        "Refactored UI workflows by converting modal-based interactions into scalable full-page forms using React.js. Implemented dynamic routing with React Router and modularized reusable components using hooks, improving maintainability and reducing code duplication.",
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "Rawyal, Jaipur (On-site)",
+      period: "Jan 2026 – Feb 2026",
+      description:
+        "Built AIFileFlow, a scalable document-processing platform handling 100+ daily file operations. Developed 10+ RESTful APIs for PDF processing, reducing manual work by 40% and enabling concurrent processing. Also built a responsive React frontend for seamless API interaction.",
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "SnackBae (Remote)",
       period: "Jan 2025 – Jul 2025",
       description:
-        "Worked on backend-heavy full-stack systems integrating secure payment processing and inventory management for hospital billing and kitchen order fulfillment. Optimized PostgreSQL database operations with schema validation, indexing, and query refactoring, improving API response times by 30–40%. Implemented JWT-based authentication, robust error handling, and unit testing to ensure secure and scalable systems.",
+        "Developed secure payment and inventory workflows for hospital billing systems. Optimized PostgreSQL performance by 30% through indexing and query refactoring, and implemented JWT-based authentication to enhance API security.",
     },
   ];
 
   const achievements = [
     {
-      title: "3rd Place – Run Code Run (IIIT Una)",
-      description:
-        "Secured 3rd position out of 25 teams in an intra-college coding competition by solving real-time algorithmic challenges under strict time constraints, demonstrating strong problem-solving skills and teamwork.",
-      icon: "🥉",
-    },
-    {
       title: "National Semi-finalist – Tata Imagination Challenge",
       description:
-        "Ranked in the top 2% nationwide among 350,000+ participants in the Tata Imagination Challenge, showcasing analytical thinking, innovation, and business problem-solving skills.",
+        "Ranked in the top 2% among 350,000+ participants nationwide, demonstrating strong analytical thinking and problem-solving ability.",
       icon: "🏅",
+    },
+    {
+      title: "LeetCode Problem Solving",
+      description:
+        "Solved 300+ Data Structures and Algorithms problems, strengthening expertise in arrays, strings, dynamic programming, and graph algorithms.",
+      icon: "💻",
     },
   ];
 
@@ -60,7 +75,7 @@ function Experience() {
           <div className="space-y-10">
             {experiences.map((exp, index) => (
               <motion.div
-                key={exp.title}
+                key={exp.title + index}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
